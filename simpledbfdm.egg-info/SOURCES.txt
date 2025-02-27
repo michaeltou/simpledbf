@@ -1,0 +1,9 @@
+LICENSE.txt
+README.rst
+setup.py
+simpledbfdm/__init__.py
+simpledbfdm/simpledbf.py
+simpledbfdm.egg-info/PKG-INFO
+simpledbfdm.egg-info/SOURCES.txt
+simpledbfdm.egg-info/dependency_links.txt
+simpledbfdm.egg-info/top_level.txt

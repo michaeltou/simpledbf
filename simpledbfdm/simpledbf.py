@@ -586,8 +586,19 @@ class Dbf5(DbfBase):
             # Extract a single record
             record = struct.unpack(self.fmt, self.f.read(self.fmtsiz))
             # If delete byte is not a space, record was deleted so skip
-            if record[0] != b' ': 
-                continue  
+            '''
+            --changed by douming on 2025-02-27
+             reason:  
+             0X20（即空格）:代表未删除
+             0X2A（即星号）:代表已删除
+             0X00（即空字符）:代表空值,   这种状态simpledbf没有进行处理，会导致部分数据读取不出来。我们需要把这类数据也归为正常数据。
+
+             if record[0] != b' ':  # 原始逻辑 start
+                continue            # 原始逻辑 end
+            '''
+            # 0X2A（即星号）:代表已删除, 如果该标志位是其它值，也需要进行读取，即把逻辑反过来。
+            if record[0] == b'\x2A':
+                continue
             
             # Save the column types for later
             self._dtypes = {}

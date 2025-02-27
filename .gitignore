@@ -2,5 +2,5 @@
 TODO*
 *pyc
 .pypirc
-dist/
+build/
 simpledbf.egg*

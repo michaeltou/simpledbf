@@ -4,7 +4,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(
-    name = "simpledbf",
+    name = "simpledbfdm",
     version = "0.2.6",
 
     description = "Convert DBF files to CSV, DataFrames, HDF5 tables, and "\
