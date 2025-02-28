@@ -4,3 +4,5 @@ TODO*
 .pypirc
 build/
 simpledbfdm.egg*
+**/.DS_Store
+.idea/
